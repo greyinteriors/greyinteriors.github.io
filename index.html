@@ -39,6 +39,12 @@
     /* Filter Button Hover/Active */
     .filter-btn { transition: color .3s ease, border-color .3s ease; }
     .filter-btn.active { color: #1C1B18 !important; border-bottom-color: #9A7B4F !important; }
+    
+    /* Mobile Navbar Fixes */
+    @media (max-width: 768px) {
+      .desktop-link { display: none !important; }
+      .nav-btn { padding: 8px 12px !important; font-size: 10px !important; }
+    }
   </style>
 </head>
 <body>
@@ -56,10 +62,10 @@
       </div>
     </a>
 
-    <div style="display:flex;align-items:center;gap:clamp(18px,3vw,40px)">
-      <a href="#work" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">Work</a>
-      <a href="#legacy" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">Legacy</a>
-      <a href="#about" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">About</a>
+    <div style="display:flex;align-items:center;gap:clamp(12px,3vw,40px)">
+      <a href="#work" class="desktop-link" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">Work</a>
+      <a href="#legacy" class="desktop-link" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">Legacy</a>
+      <a href="#about" class="desktop-link" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">About</a>
       <a href="mailto:greystoneinteriorss@gmail.com" class="nav-btn" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#1C1B18;border:1px solid #1C1B18;padding:11px 20px;border-radius:2px;transition:background .3s ease,color .3s ease">Book Consult</a>
     </div>
   </nav>
