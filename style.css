@@ -22,18 +22,35 @@ header h1 {
     padding: 0 15px; /* Adds breathing room on the left and right */
 }
 
-/* NEW: Logo styling */
-.header-logo {
-    max-width: 120px; /* Adjust this size once you design your logo */
-    height: auto;
-    margin-bottom: 20px; /* Creates space between the logo and the text */
+/* NEW: Flexbox wrapper to align items side-by-side */
+.header-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between the logo and the text */
+    margin-bottom: 10px;
 }
 
-/* NEW: Mobile responsive adjustments */
+/* UPDATED: Scaled down to fit neatly beside the text */
+.header-logo {
+    max-width: 80px; 
+    height: auto;
+    margin-bottom: 0; 
+}
+
+/* UPDATED: Mobile responsive adjustments */
 @media (max-width: 600px) {
+    .header-title-wrapper {
+        gap: 12px;
+    }
+    
+    .header-logo {
+        max-width: 55px; /* Shrinks the logo on mobile */
+    }
+    
     header h1 {
-        font-size: 2.2em; /* Scales the font down on small phone screens */
-        padding: 0 20px;
+        font-size: 2em; /* Shrinks the font slightly so it fits side-by-side */
+        padding: 0;
     }
     
     header p {
