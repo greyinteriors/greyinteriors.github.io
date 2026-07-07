@@ -1,138 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greystone Interiors | Design Studio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Greystone Interiors | Luxury Design & Civil Contracting</title>
+  
+  <!-- Import Standard Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      margin: 0; 
+      background: #F4F1EA; 
+      color: #1C1B18; 
+      font-family: 'Manrope', system-ui, sans-serif; 
+      -webkit-font-smoothing: antialiased; 
+      overflow-x: hidden; 
+    }
+    a { color: #9A7B4F; text-decoration: none; }
+    a:hover { color: #1C1B18; }
+    ::selection { background: #1C1B18; color: #F4F1EA; }
+    
+    /* Utility for hover states converted from friend's custom attributes */
+    .btn-dark:hover { background: #9A7B4F !important; }
+    .btn-outline:hover { border-color: #1C1B18 !important; }
+    .nav-btn:hover { background: #1C1B18 !important; color: #F4F1EA !important; }
+    .footer-link:hover { color: #F4F1EA !important; }
+    
+    /* Service Tile Hover */
+    .service-tile img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .service-tile:hover img { transform: scale(1.08); }
+  </style>
 </head>
 <body>
 
-    <nav class="top-nav" style="background-color: #1a252f; padding: 15px; text-align: center;">
-        <a href="index.html" style="color: #fff; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 1.1em;">Home</a>
-        <a href="about.html" style="color: #fff; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 1.1em;">About Us</a>
-    </nav>
+<div id="top" style="position:relative">
 
-    <header>
-        
-        <div class="header-title-wrapper">
-            <img src="logo.png" alt="Greystone Interiors Logo" class="header-logo">
-            <h1>Greystone Interiors</h1>
-        </div>
-        <p>Modern Spaces. Timeless Elegance.</p>
-    </header>
+  <!-- STICKY NAV -->
+  <nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,4vw,48px);background:transparent;border-bottom:1px solid transparent;transition:background .4s ease,padding .4s ease,border-color .4s ease, backdrop-filter .4s ease;">
+    
+    <a href="#top" style="display:flex; align-items:center; gap: 15px;">
+      <!-- Using your new transparent logo -->
+      <img src="images/logo.png" alt="GS Logo" style="height: 40px; width: auto;">
+      <div style="display:flex;flex-direction:column;line-height:1">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;letter-spacing:.04em;color:#1C1B18">Greystone</span>
+        <span style="font-family:'Manrope',sans-serif;font-size:9px;letter-spacing:.44em;text-transform:uppercase;color:#9A7B4F;margin-top:3px">Interiors</span>
+      </div>
+    </a>
 
-    <div class="container">
-        <h2>Expert Interior & Civil Contracting</h2>
-        <p class="intro-text">Welcome to Greystone Interiors. We bring uncompromised quality and precision to bespoke interior design, specializing in complex structural layouts, premium stone installations, and comprehensive civil finishes.</p>
-        
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">All Work</button>
-            <button class="filter-btn" data-filter="stone">Stone & Marble</button>
-            <button class="filter-btn" data-filter="structural">Structural & Framing</button>
-            <button class="filter-btn" data-filter="kitchen-bath">Kitchen & Bath</button>
-        </div>
+    <div style="display:flex;align-items:center;gap:clamp(18px,3vw,40px)">
+      <a href="#work" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">Work</a>
+      <a href="#legacy" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">Legacy</a>
+      <a href="#about" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1C1B18;font-weight:600">About</a>
+      <a href="mailto:greystoneinteriorss@gmail.com" class="nav-btn" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#1C1B18;border:1px solid #1C1B18;padding:11px 20px;border-radius:2px;transition:background .3s ease,color .3s ease">Book Consult</a>
+    </div>
+  </nav>
 
-        <div class="service-grid-9" id="portfolio-grid">
-            
-            <div class="service-tile" data-category="stone">
-                <img src="katie-moum-9jNcTRncjgM-unsplash.jpg" alt="Italian Marble Installation">
-                <div class="service-label">Italian Marble</div>
-            </div>
-            
-            <div class="service-tile" data-category="stone">
-                <img src="daniela-paola-alchapar-DHjVnAGgKjw-unsplash.jpg" alt="Indian Marble Installation">
-                <div class="service-label">Indian Marble</div>
-            </div>
-            
-            <div class="service-tile" data-category="stone">
-                <img src="albert-hyseni-EFYock9d0JA-unsplash.jpg" alt="Vitrified Tile Installation">
-                <div class="service-label">Vitrified Tile</div>
-            </div>
-            
-            <div class="service-tile" data-category="stone">
-                <img src="clay-banks-R4Kz9SNajR8-unsplash.jpg" alt="Granite Work">
-                <div class="service-label">Granite</div>
-            </div>
-            
-            <div class="service-tile" data-category="kitchen-bath">
-                <img src="super-snapper-CQeKvOTrGuQ-unsplash.jpg" alt="Bathroom Work">
-                <div class="service-label">Bathroom Work</div>
-            </div>
-            
-            <div class="service-tile" data-category="structural">
-                <img src="ricardo-gomez-angel-z26anj3qztM-unsplash.jpg" alt="Wet & Dry Cladding">
-                <div class="service-label">Wet & Dry Cladding</div>
-            </div>
-            
-            <div class="service-tile" data-category="kitchen-bath">
-                <img src="alef-morais-h2t0FJ22xJ4-unsplash.jpg" alt="Kitchen Work">
-                <div class="service-label">Kitchen Work</div>
-            </div>
-            
-            <div class="service-tile" data-category="structural">
-                <img src="camille-brodard-mlxRHT1JtuQ-unsplashhgh.jpg" alt="Door and Window Frame">
-                <div class="service-label">Door / Window Frame</div>
-            </div>
-            
-            <div class="service-tile" data-category="structural">
-                <img src="nur-athirah-hamzah-oTOuuoRQcR0-unsplash.jpg" alt="Staircase Work">
-                <div class="service-label">Staircase Work</div>
-            </div>
+  <!-- HERO -->
+  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));min-height:100vh;align-items:stretch">
+    <div style="display:flex;flex-direction:column;justify-content:center;padding:clamp(90px,10vw,120px) clamp(24px,5vw,72px) clamp(48px,6vw,72px)">
+      <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9A7B4F;font-weight:700;margin-bottom:26px">Interior &amp; Civil Contracting</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(52px,8vw,104px);line-height:.98;letter-spacing:-.01em;margin:0;color:#1C1B18">Greystone<br>Interiors</h1>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.6vw,30px);color:#6B665C;margin:24px 0 0;line-height:1.35">Modern Spaces. Timeless Elegance.</p>
+      
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:44px">
+        <a href="mailto:greystoneinteriorss@gmail.com" class="btn-dark" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#F4F1EA;background:#1C1B18;padding:16px 30px;border-radius:2px;transition:background .3s ease">Book a Consultation</a>
+        <a href="#work" class="btn-outline" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#1C1B18;border:1px solid rgba(28,27,24,.28);padding:16px 30px;border-radius:2px;transition:border-color .3s ease">View Our Work</a>
+      </div>
 
-        </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,30px);margin-top:clamp(48px,7vw,88px)">
+        <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#a8a294;font-weight:700">Trusted by</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#6B665C">Shapoorji Pallonji</span>
+        <span style="width:4px;height:4px;border-radius:50%;background:#c9c2b1"></span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#6B665C">Godrej</span>
+        <span style="width:4px;height:4px;border-radius:50%;background:#c9c2b1"></span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#6B665C">L&amp;T</span>
+        <span style="width:4px;height:4px;border-radius:50%;background:#c9c2b1"></span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#6B665C">Adani</span>
+      </div>
+    </div>
+    
+    <div style="position:relative;min-height:60vh;background:#e6e0d4">
+      <!-- High quality hero image -->
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" style="width:100%;height:100%;object-fit:cover;" alt="Luxury Interior">
+    </div>
+  </section>
 
-        <a href="mailto:greystoneinteriorss@gmail.com" class="cta-button">Book a Consultation</a>
+  <!-- INTRO -->
+  <section id="about" data-reveal style="max-width:1000px;margin:0 auto;padding:clamp(90px,12vw,150px) clamp(24px,5vw,48px) clamp(60px,7vw,90px);text-align:center">
+    <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9A7B4F;font-weight:700">What we do</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,5vw,60px);line-height:1.06;letter-spacing:-.01em;margin:22px 0 0;color:#1C1B18">Expert Interior &amp; Civil Contracting</h2>
+    <p style="font-size:clamp(16px,1.5vw,18px);line-height:1.8;color:#57534a;max-width:720px;margin:28px auto 0">Welcome to Greystone Interiors. We bring uncompromised quality and precision to bespoke interior design, specializing in complex structural layouts, premium stone installations, and comprehensive civil finishes.</p>
+  </section>
+
+  <!-- WORK (PORTFOLIO GRID) -->
+  <section id="work" data-reveal style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px) clamp(90px,12vw,150px)">
+    
+    <!-- Filters -->
+    <div data-filters style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,4vw,44px);margin-bottom:clamp(40px,5vw,64px);border-top:1px solid rgba(28,27,24,.12);border-bottom:1px solid rgba(28,27,24,.12);padding:22px 0">
+      <button data-filter="all" style="background:none;border:none;border-bottom:2px solid #9A7B4F;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#1C1B18;transition:color .3s ease,border-color .3s ease">All Work</button>
+      <button data-filter="stone" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;transition:color .3s ease,border-color .3s ease">Stone &amp; Marble</button>
+      <button data-filter="structural" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;transition:color .3s ease,border-color .3s ease">Structural &amp; Framing</button>
+      <button data-filter="kitchen-bath" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;transition:color .3s ease,border-color .3s ease">Kitchen &amp; Bath</button>
     </div>
 
-    <div class="portfolio-section">
-        <h2>Our Legacy & Project Experience</h2>
-        <p class="intro-text">Our team's expertise is built on a foundation of delivering high-profile residential and commercial projects alongside India's top developers.</p>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <h4>Nice World</h4>
-                <p>Kausa | Comprehensive tiling execution and finishing for commercial units.</p>
-            </div>
-            <div class="portfolio-item">
-                <h4>MCA Recreation Centre</h4>
-                <p>BKC | Custom granite installation and premium tile work.</p>
-            </div>
-            <div class="portfolio-item">
-                <h4>Mukta Gharonda</h4>
-                <p>Bespoke interior execution for modern 1 & 2 BHK homes.</p>
-            </div>
-            <div class="portfolio-item">
-                <h4>Pragati Maidan Redevelopment</h4>
-                <p>Delhi | Shapoorji Pallonji</p>
-            </div>
-            <div class="portfolio-item">
-                <h4>Godrej The Tree</h4>
-                <p>Mumbai | Godrej Properties</p>
-            </div>
-            <div class="portfolio-item">
-                <h4>Seawoods Railway Project</h4>
-                <p>Navi Mumbai | L&T Limited</p>
-            </div>
-            <div class="portfolio-item">
-                <h4>Della Resorts and Villas</h4>
-                <p>Lonavala</p>
-            </div>
-            <div class="portfolio-item">
-                <h4>Samudra Housing Project</h4>
-                <p>Mundra, Gujarat | Adani</p>
-            </div>
-        </div>
+    <!-- The 9-Image Grid -->
+    <div data-grid style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(14px,1.6vw,22px)">
+      
+      <div class="service-tile" data-category="stone" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="katie-moum-9jNcTRncjgM-unsplash.jpg" alt="Italian Marble" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Italian Marble</span></div>
+      </div>
+      
+      <div class="service-tile" data-category="stone" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="daniela-paola-alchapar-DHjVnAGgKjw-unsplash.jpg" alt="Indian Marble" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Indian Marble</span></div>
+      </div>
+      
+      <div class="service-tile" data-category="stone" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="albert-hyseni-EFYock9d0JA-unsplash.jpg" alt="Vitrified Tile" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Vitrified Tile</span></div>
+      </div>
+      
+      <div class="service-tile" data-category="stone" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="clay-banks-R4Kz9SNajR8-unsplash.jpg" alt="Granite Work" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Granite</span></div>
+      </div>
+      
+      <div class="service-tile" data-category="kitchen-bath" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="super-snapper-CQeKvOTrGuQ-unsplash.jpg" alt="Bathroom Work" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Bathroom Work</span></div>
+      </div>
+      
+      <div class="service-tile" data-category="structural" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="ricardo-gomez-angel-z26anj3qztM-unsplash.jpg" alt="Wet & Dry Cladding" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Wet &amp; Dry Cladding</span></div>
+      </div>
+      
+      <div class="service-tile" data-category="kitchen-bath" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="miguel-henriques-Ej-vgZ9oVfU-unsplash.jpg" alt="Kitchen Work" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Kitchen Work</span></div>
+      </div>
+      
+      <div class="service-tile" data-category="structural" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="camille-brodard-mlxRHT1JtuQ-unsplashhgh.jpg" alt="Door and Window Frame" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Door / Window Frame</span></div>
+      </div>
+      
+      <div class="service-tile" data-category="structural" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <img src="nur-athirah-hamzah-oTOuuoRQcR0-unsplash.jpg" alt="Staircase Work" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Staircase Work</span></div>
+      </div>
+
     </div>
+  </section>
 
-    <footer>
-        <p>
-            <a href="https://instagram.com/greystoneinterior" target="_blank">Instagram</a> | 
-            <a href="mailto:greystoneinteriorss@gmail.com">Contact Us</a>
-        </p>
-        <p>&copy; 2026 Greystone Interiors.</p>
-    </footer>
+  <!-- LEGACY -->
+  <section id="legacy" data-reveal style="max-width:1180px;margin:0 auto;padding:0 clamp(24px,5vw,48px) clamp(90px,12vw,150px)">
+    <div style="max-width:760px;margin:0 auto clamp(48px,6vw,72px);text-align:center">
+      <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9A7B4F;font-weight:700">Track record</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,5vw,60px);line-height:1.06;letter-spacing:-.01em;margin:22px 0 0;color:#1C1B18">Our Legacy &amp; Project Experience</h2>
+      <p style="font-size:clamp(16px,1.5vw,18px);line-height:1.8;color:#57534a;margin:24px 0 0">Our team's expertise is built on a foundation of delivering high-profile residential and commercial projects alongside India's top developers.</p>
+    </div>
+    <div style="border-top:1px solid rgba(28,27,24,.14)">
+      
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Nice World</span>
+        <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">Kausa · Comprehensive tiling execution &amp; finishing for commercial units</span>
+      </div>
+      
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">MCA Recreation Centre</span>
+        <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">BKC · Custom granite installation &amp; premium tile work</span>
+      </div>
+      
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Mukta Gharonda, Mumbra</span>
+        <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">Bespoke interior execution for modern 1 &amp; 2 BHK homes</span>
+      </div>
+      
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Pragati Maidan Redevelopment</span>
+        <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">Delhi · Shapoorji Pallonji</span>
+      </div>
+      
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Godrej The Tree</span>
+        <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">Mumbai · Godrej Properties</span>
+      </div>
+      
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Seawoods Railway Project</span>
+        <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">Navi Mumbai · L&amp;T Limited</span>
+      </div>
+      
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Della Resorts &amp; Villas</span>
+        <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">Lonavala</span>
+      </div>
+      
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Samudra Housing Project</span>
+        <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">Mundra, Gujarat · Adani</span>
+      </div>
 
-    <script src="script.js"></script>
+    </div>
+  </section>
+
+  <!-- STORY / VALUES -->
+  <section style="background:#1C1B18;color:#F4F1EA">
+    <div data-reveal style="max-width:1180px;margin:0 auto;padding:clamp(90px,12vw,150px) clamp(24px,5vw,48px)">
+      <div style="max-width:860px">
+        <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#c2a06a;font-weight:700">Our Story</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(36px,5.5vw,68px);line-height:1.04;letter-spacing:-.01em;margin:22px 0 0;color:#F4F1EA">Built on legacy.<br>Designed for the future.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,3vw,48px);margin-top:clamp(44px,5vw,64px);max-width:900px">
+        <p style="font-size:16px;line-height:1.85;color:#c9c4b8;margin:0">Building upon decades of foundational contracting legacy, Greystone Interiors is the premier building partner for the most forward-thinking clients in the area. We merge formal architectural expertise with hands-on civil engineering experience to reinvent the building process.</p>
+        <p style="font-size: 16px; line-height: 1.85; color: #c9c4b8; margin: 0;">Our success is a result of our unwavering dedication to the client's vision and a work environment that values fairness, loyalty, and leadership. We foster teamwork and involvement among our high-performance project team members, ensuring that top talent brings your space to life.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(32px,4vw,56px);margin-top:clamp(64px,8vw,110px);padding-top:clamp(48px,5vw,64px);border-top:1px solid rgba(244,241,234,.16)">
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;margin:0 0 18px;color:#F4F1EA">Mission</h3>
+          <p style="font-size:15px;line-height:1.8;color:#b5b0a4;margin:0 0 16px">From design to installation, our passion is to make beautiful interiors accessible to all. Our customers find inspiration in trendy styles and motivating experiences. Our installation services provide peace of mind to the full-service seeker.</p>
+          <p style="font-size:15px;line-height:1.8;color:#b5b0a4;margin:0">Our associates are passionate about helping customers find the perfect layout and finish for their home using the quality products we supply.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;margin:0 0 18px;color:#F4F1EA">Vision</h3>
+          <p style="font-size:15px;line-height:1.8;color:#b5b0a4;margin:0">We seek sustainable, profitable growth through sound management. This benefits not only our stakeholders but also our clients, who can be confident in our long-term commitment to developing and delivering advanced civil and interior solutions.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;margin:0 0 18px;color:#F4F1EA">Core Values</h3>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+            <li style="font-size:14px;color:#c9c4b8;padding-left:20px;position:relative;line-height:1.5"><span style="position:absolute;left:0;top:.55em;width:5px;height:5px;background:#c2a06a"></span>Provide the best</li>
+            <li style="font-size:14px;color:#c9c4b8;padding-left:20px;position:relative;line-height:1.5"><span style="position:absolute;left:0;top:.55em;width:5px;height:5px;background:#c2a06a"></span>Build to last</li>
+            <li style="font-size:14px;color:#c9c4b8;padding-left:20px;position:relative;line-height:1.5"><span style="position:absolute;left:0;top:.55em;width:5px;height:5px;background:#c2a06a"></span>Never stop seeking new opportunities to succeed</li>
+            <li style="font-size:14px;color:#c9c4b8;padding-left:20px;position:relative;line-height:1.5"><span style="position:absolute;left:0;top:.55em;width:5px;height:5px;background:#c2a06a"></span>Never give up</li>
+            <li style="font-size:14px;color:#c9c4b8;padding-left:20px;position:relative;line-height:1.5"><span style="position:absolute;left:0;top:.55em;width:5px;height:5px;background:#c2a06a"></span>Every group company, at every level</li>
+            <li style="font-size:14px;color:#c9c4b8;padding-left:20px;position:relative;line-height:1.5"><span style="position:absolute;left:0;top:.55em;width:5px;height:5px;background:#c2a06a"></span>No prejudice</li>
+            <li style="font-size:14px;color:#c9c4b8;padding-left:20px;position:relative;line-height:1.5"><span style="position:absolute;left:0;top:.55em;width:5px;height:5px;background:#c2a06a"></span>Harness our different perspectives to our advantage</li>
+            <li style="font-size:14px;color:#c9c4b8;padding-left:20px;position:relative;line-height:1.5"><span style="position:absolute;left:0;top:.55em;width:5px;height:5px;background:#c2a06a"></span>Active co-operation with suppliers, customers, partners</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#161513;color:#F4F1EA;text-align:center;padding:clamp(90px,12vw,150px) clamp(24px,5vw,48px);border-top:1px solid rgba(244,241,234,.08)">
+    <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#c2a06a;font-weight:700">Begin</span>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,6vw,80px);line-height:1.02;letter-spacing:-.01em;margin:20px auto 0;max-width:900px">Let's build something enduring.</h2>
+    <a href="mailto:greystoneinteriorss@gmail.com" class="nav-btn" style="display:inline-block;margin-top:40px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#161513;background:#F4F1EA;padding:17px 34px;border-radius:2px;transition:background .3s ease,color .3s ease">Book a Consultation</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#161513;color:#8f8a7e;padding:clamp(44px,5vw,64px) clamp(24px,5vw,48px);border-top:1px solid rgba(244,241,234,.08)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
+      <div style="display:flex;flex-direction:column;line-height:1">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:.04em;color:#F4F1EA">Greystone</span>
+        <span style="font-size:9px;letter-spacing:.44em;text-transform:uppercase;color:#c2a06a;margin-top:3px">Interiors</span>
+      </div>
+      <div style="display:flex;gap:28px;align-items:center">
+        <a href="https://instagram.com/greystoneinterior" target="_blank" class="footer-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#c9c4b8; transition:color .3s ease">Instagram</a>
+        <a href="mailto:greystoneinteriorss@gmail.com" class="footer-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#c9c4b8; transition:color .3s ease">Contact</a>
+      </div>
+      <span style="font-size:12px;color:#6f6a5f;letter-spacing:.04em">© 2026 Greystone Interiors</span>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Interactive Javascript extracted from the original file -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Reveal Animations on Scroll
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    revealElements.forEach(el => { 
+      el.style.opacity = '0'; 
+      el.style.transform = 'translateY(26px)'; 
+      el.style.transition = 'opacity 1s cubic-bezier(.16,.7,.3,1), transform 1s cubic-bezier(.16,.7,.3,1)'; 
+    });
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      revealElements.forEach(el => io.observe(el));
+    } else { 
+      // Fallback if browser doesn't support intersection observer
+      revealElements.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; }); 
+    }
+
+    // 2. Sticky Nav Glass Effect on Scroll
+    const nav = document.querySelector('[data-nav]');
+    const onScroll = () => { 
+      if (!nav) return; 
+      const s = window.scrollY > 24; 
+      nav.style.background = s ? 'rgba(244,241,234,.95)' : 'transparent'; 
+      nav.style.backdropFilter = s ? 'blur(12px)' : 'none'; 
+      nav.style.webkitBackdropFilter = s ? 'blur(12px)' : 'none'; 
+      nav.style.borderBottomColor = s ? 'rgba(28,27,24,.1)' : 'transparent'; 
+      nav.style.padding = s ? '14px clamp(20px,4vw,48px)' : '22px clamp(20px,4vw,48px)'; 
+    };
+    window.addEventListener('scroll', onScroll, { passive: true }); 
+    onScroll(); // Trigger immediately on load
+
+    // 3. Portfolio Filtering Logic
+    const filterBtns = document.querySelectorAll('button[data-filter]');
+    const grid = document.querySelector('[data-grid]');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const cat = e.currentTarget.dataset.filter;
+        
+        // Filter the grid images
+        if (grid) { 
+          Array.from(grid.children).forEach(tile => { 
+            const show = cat === 'all' || tile.dataset.category === cat; 
+            tile.style.display = show ? '' : 'none'; 
+          }); 
+        }
+        
+        // Update the active button styling
+        filterBtns.forEach(b => { 
+          const isActive = b.dataset.filter === cat; 
+          b.style.color = isActive ? '#1C1B18' : '#8b8578'; 
+          b.style.borderBottomColor = isActive ? '#9A7B4F' : 'transparent'; 
+        });
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
