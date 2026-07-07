@@ -13,11 +13,33 @@ header {
     padding: 100px 20px;
 }
 
+/* Update your existing header h1 */
 header h1 {
     margin: 0;
     font-size: 3.5em;
     letter-spacing: 3px;
     text-transform: uppercase;
+    padding: 0 15px; /* Adds breathing room on the left and right */
+}
+
+/* NEW: Logo styling */
+.header-logo {
+    max-width: 120px; /* Adjust this size once you design your logo */
+    height: auto;
+    margin-bottom: 20px; /* Creates space between the logo and the text */
+}
+
+/* NEW: Mobile responsive adjustments */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2em; /* Scales the font down on small phone screens */
+        padding: 0 20px;
+    }
+    
+    header p {
+        font-size: 1em;
+        padding: 0 15px;
+    }
 }
 
 header p {
