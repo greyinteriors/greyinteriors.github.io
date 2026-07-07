@@ -1,0 +1,202 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    color: #fff;
+    padding: 100px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+header p {
+    font-style: italic;
+    font-size: 1.2em;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.intro-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Filter Buttons */
+.filter-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid #246a9e;
+    color: #246a9e;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #246a9e;
+    color: white;
+}
+
+/* Service Grid */
+.service-grid-9 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 900px) {
+    .service-grid-9 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .service-grid-9 { grid-template-columns: 1fr; }
+}
+
+.service-tile {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 260px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    background-color: #eaeaea; 
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Utility class for hiding filtered items */
+.service-tile.hide {
+    display: none;
+}
+
+.service-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.service-tile:hover img {
+    transform: scale(1.08);
+}
+
+.service-label {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #246a9e; 
+    color: white;
+    padding: 10px 22px;
+    border-radius: 25px; 
+    font-weight: bold;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.service-tile:hover .service-label {
+    background-color: #17456b; 
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    background-color: #fff;
+    padding: 60px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.portfolio-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 4px solid #2c3e50;
+    text-align: left;
+}
+
+.portfolio-item h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.portfolio-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #8e44ad;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background 0.3s;
+    box-shadow: 0 4px 6px rgba(142, 68, 173, 0.2);
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #732d91;
+}
+
+footer {
+    background-color: #2c3e50;
+    padding: 40px 20px;
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
