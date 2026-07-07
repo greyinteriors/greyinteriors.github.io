@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Greystone Interiors</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific CSS just for the About Page layout */
+        .about-header {
+            padding: 60px 20px;
+            background-color: #2c3e50;
+        }
+        
+        /* Simple Navigation Bar */
+        .top-nav {
+            background-color: #1a252f;
+            padding: 15px;
+            text-align: center;
+        }
+        .top-nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        .top-nav a:hover {
+            color: #8e44ad;
+        }
+
+        .content-section {
+            background-color: #fff;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .content-section h2 {
+            color: #246a9e;
+            border-bottom: 3px solid #8e44ad;
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 0;
+        }
+
+        .values-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .values-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05em;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .values-list li::before {
+            content: "▪";
+            color: #8e44ad;
+            font-size: 1.5em;
+            margin-right: 15px;
+            line-height: 0;
+        }
+
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2-col {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <header class="about-header">
+        <h1>Our Story</h1>
+        <p>Built on Legacy. Designed for the Future.</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="content-section">
+            <h2>About Greystone Interiors</h2>
+            <p class="intro-text" style="text-align: left; margin-left: 0; max-width: 100%;">
+                Building upon decades of foundational contracting legacy, Greystone Interiors is the premier building partner for the most forward-thinking clients in the area. Founded by Faraaz, Greystone Interiors merges formal architectural expertise with hands-on civil engineering experience to reinvent the building process. 
+            </p>
+            <p class="intro-text" style="text-align: left; margin-left: 0; max-width: 100%;">
+                Our success is a result of our unwavering dedication to the client's vision and a work environment that values fairness, loyalty, and leadership. We foster teamwork and involvement among our high-performance project team members, ensuring that top talent brings your space to life.
+            </p>
+        </div>
+
+        <div class="grid-2-col">
+            <div>
+                <div class="content-section">
+                    <h2>Mission Statement</h2>
+                    <p>From design to installation, our passion is to make beautiful interiors accessible to all. Our customers find inspiration in trendy styles and motivating experiences. Our installation services provide peace of mind to the full-service seeker.</p>
+                    <p>Our associates are passionate about helping customers find the perfect layout and finish for their home using the quality products we supply. Our services, selection, and dedication all work together to make our customers' interior experience easy and enjoyable.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Vision</h2>
+                    <p>We seek sustainable, profitable growth through sound management. This benefits not only our stakeholders but also our clients, who can be confident in our long-term commitment to developing and delivering advanced civil and interior solutions.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Our Core Values</h2>
+                <ul class="values-list">
+                    <li>Provide the best</li>
+                    <li>Build to last</li>
+                    <li>Never stop seeking new opportunities to succeed</li>
+                    <li>Never give up</li>
+                    <li>Every group company, at every level</li>
+                    <li>No prejudice</li>
+                    <li>Harness our different perspectives to our advantage</li>
+                    <li>Active co-operation with suppliers, customers, partners</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="mailto:greystoneinteriorss@gmail.com" class="cta-button">Start Your Project</a>
+    </div>
+
+    <footer>
+        <p>
+            <a href="https://instagram.com/greystoneinterior" target="_blank">Instagram</a> | 
+            <a href="mailto:greystoneinteriorss@gmail.com">Contact Us</a>
+        </p>
+        <p>&copy; 2026 Greystone Interiors by Faraaz. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
