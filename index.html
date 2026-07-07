@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greystone Interiors | Thane</title>
+    <title>Greystone | Interior Design Studio</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -50,52 +50,103 @@
             margin-right: auto;
         }
 
-        /* --- NEW PORTFOLIO GALLERY CSS --- */
-        .gallery-grid {
+        /* --- 3x3 SERVICE GRID CSS --- */
+        .service-grid-9 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+            margin-bottom: 60px;
         }
 
-        .gallery-item {
-            background: #fff;
-            border-radius: 8px;
+        /* Make it responsive for tablets and mobile */
+        @media (max-width: 900px) {
+            .service-grid-9 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .service-grid-9 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-tile {
+            position: relative;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+            height: 260px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            background-color: #eaeaea; 
         }
 
-        .gallery-item:hover {
-            transform: translateY(-8px);
-        }
-
-        .gallery-img {
+        .service-tile img {
             width: 100%;
-            height: 350px;
+            height: 100%;
             object-fit: cover;
-            display: block;
+            transition: transform 0.4s ease;
         }
 
-        .gallery-caption {
+        .service-tile:hover img {
+            transform: scale(1.08);
+        }
+
+        .service-label {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #246a9e; 
+            color: white;
+            padding: 10px 22px;
+            border-radius: 25px; 
+            font-weight: bold;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+        
+        .service-tile:hover .service-label {
+            background-color: #17456b; 
+        }
+        
+        /* Portfolio / Past Experience Section */
+        .portfolio-section {
+            background-color: #fff;
+            padding: 60px 20px;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .portfolio-item {
+            background: #f9f9f9;
             padding: 20px;
+            border-left: 4px solid #2c3e50;
             text-align: left;
         }
 
-        .gallery-caption h3 {
-            margin: 0 0 8px 0;
-            color: #2c3e50;
-            font-size: 1.2em;
+        .portfolio-item h4 {
+            margin: 0 0 10px 0;
+            color: #333;
         }
 
-        .gallery-caption p {
+        .portfolio-item p {
             margin: 0;
-            color: #777;
-            font-size: 0.95em;
-            line-height: 1.4;
+            font-size: 0.9em;
+            color: #666;
         }
-        /* --------------------------------- */
 
         .cta-button {
             display: inline-block;
@@ -120,7 +171,6 @@
             padding: 40px 20px;
             font-size: 0.9em;
             color: #ddd;
-            margin-top: 80px;
         }
         
         footer a {
@@ -143,59 +193,90 @@
 
     <div class="container">
         <h2>Expert Interior & Civil Contracting</h2>
-        <p class="intro-text">Welcome to Greystone. We bring uncompromised quality and precision to bespoke interior design, specializing in complex structural layouts, premium stone installations, and comprehensive civil finishes.</p>
+        <p class="intro-text">Welcome to Greystone Interiors. We bring uncompromised quality and precision to bespoke interior design, specializing in complex structural layouts, premium stone installations, and comprehensive civil finishes.</p>
         
-        <!-- Beautiful Image Gallery Section -->
-        <div class="gallery-grid">
+        <div class="service-grid-9">
             
-            <!-- Image 1 -->
-            <div class="gallery-item">
-                <img src="nur-athirah-hamzah-oTOuuoRQcR0-unsplash.jpg" alt="Commercial Marble Staircase" class="gallery-img">
-                <div class="gallery-caption">
-                    <h3>Grand Staircase Execution</h3>
-                    <p>Curved structural layouts featuring premium Italian marble and contemporary glass framework.</p>
-                </div>
+            <div class="service-tile">
+                <img src="katie-moum-9jNcTRncjgM-unsplash.jpg" alt="Italian Marble Installation">
+                <div class="service-label">Italian Marble</div>
             </div>
-
-            <!-- Image 2 -->
-            <div class="gallery-item">
-                <img src="albert-hyseni-EFYock9d0JA-unsplash.jpg" alt="Modern Wall Cladding" class="gallery-img">
-                <div class="gallery-caption">
-                    <h3>Wall Cladding & Vitrified Tile</h3>
-                    <p>Seamless dry cladding installations elevating modern transitional spaces.</p>
-                </div>
+            
+            <div class="service-tile">
+                <img src="daniela-paola-alchapar-DHjVnAGgKjw-unsplash.jpg" alt="Indian Marble Installation">
+                <div class="service-label">Indian Marble</div>
             </div>
-
-            <!-- Image 3 -->
-            <div class="gallery-item">
-                <img src="clay-banks-R4Kz9SNajR8-unsplash.jpg" alt="Stone Fireplace" class="gallery-img">
-                <div class="gallery-caption">
-                    <h3>Custom Masonry</h3>
-                    <p>Textured stone veneer and custom woodwork designed for warm, inviting living areas.</p>
-                </div>
+            
+            <div class="service-tile">
+                <img src="albert-hyseni-EFYock9d0JA-unsplash.jpg" alt="Vitrified Tile Installation">
+                <div class="service-label">Vitrified Tile</div>
             </div>
-
-            <!-- Image 4 -->
-            <div class="gallery-item">
-                <img src="camille-brodard-mlxRHT1JtuQ-unsplashhgh.jpg" alt="Classic Foyer Interior" class="gallery-img">
-                <div class="gallery-caption">
-                    <h3>Bespoke Framing & Tile</h3>
-                    <p>Intricate mosaic tile flooring complemented by custom door and window framing.</p>
-                </div>
+            
+            <div class="service-tile">
+                <img src="clay-banks-R4Kz9SNajR8-unsplash.jpg" alt="Granite Work">
+                <div class="service-label">Granite</div>
             </div>
-
-            <!-- Image 5 -->
-            <div class="gallery-item">
-                <img src="miguel-henriques-Ej-vgZ9oVfU-unsplash.jpg" alt="Exterior Landscaping" class="gallery-img">
-                <div class="gallery-caption">
-                    <h3>Exterior & Landscape Integration</h3>
-                    <p>Cobblestone pathways and structural archways blending architecture with nature.</p>
-                </div>
+            
+            <div class="service-tile">
+                <img src="super-snapper-CQeKvOTrGuQ-unsplash.jpg" alt="Bathroom Work">
+                <div class="service-label">Bathroom Work</div>
+            </div>
+            
+            <div class="service-tile">
+                <img src="ricardo-gomez-angel-z26anj3qztM-unsplash.jpg" alt="Wet & Dry Cladding">
+                <div class="service-label">Wet & Dry Cladding</div>
+            </div>
+            
+            <div class="service-tile">
+                <img src="miguel-henriques-Ej-vgZ9oVfU-unsplash.jpg" alt="Kitchen Work">
+                <div class="service-label">Kitchen Work</div>
+            </div>
+            
+            <div class="service-tile">
+                <img src="camille-brodard-mlxRHT1JtuQ-unsplashhgh.jpg" alt="Door and Window Frame">
+                <div class="service-label">Door / Window Frame</div>
+            </div>
+            
+            <div class="service-tile">
+                <img src="nur-athirah-hamzah-oTOuuoRQcR0-unsplash.jpg" alt="Staircase Work">
+                <div class="service-label">Staircase Work</div>
             </div>
 
         </div>
 
-        <a href="mailto:greystoneinteriorss@gmail.com" class="cta-button">Book a Consultation</a>
+        <a href="mailto:greystoneinteriors@gmail.com" class="cta-button">Book a Consultation</a>
+    </div>
+
+    <div class="portfolio-section">
+        <h2>Our Legacy & Project Experience</h2>
+        <p class="intro-text">Our team's expertise is built on a foundation of delivering high-profile residential and commercial projects alongside India's top developers.</p>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h4>Mukta Gharonda, Mumbra</h4>
+                <p>Bespoke interior execution for modern 1 & 2 BHK homes, integrating highly optimized layouts and finishing details in turnkey basis.</p>
+            </div>
+            <div class="portfolio-item">
+                <h4>Pragati Maidan Redevelopment</h4>
+                <p>Delhi | Shapoorji Pallonji</p>
+            </div>
+            <div class="portfolio-item">
+                <h4>Godrej The Tree</h4>
+                <p>Mumbai | Godrej Properties</p>
+            </div>
+            <div class="portfolio-item">
+                <h4>Seawoods Railway Project</h4>
+                <p>Navi Mumbai | L&T Limited</p>
+            </div>
+            <div class="portfolio-item">
+                <h4>Della Resorts and Villas</h4>
+                <p>Lonavala</p>
+            </div>
+            <div class="portfolio-item">
+                <h4>Samudra Housing Project</h4>
+                <p>Mundra, Gujarat | Adani</p>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -203,7 +284,7 @@
             <a href="https://instagram.com/greystoneinterior" target="_blank">Instagram</a> | 
             <a href="mailto:greystoneinteriorss@gmail.com">Contact Us</a>
         </p>
-        <p>&copy; 2026 Greystone by Faraaz. All rights reserved.</p>
+        <p>&copy; 2026 Greystone Interiors. All rights reserved.</p>
     </footer>
 
 </body>
