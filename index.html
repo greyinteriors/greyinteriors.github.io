@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Greystone Interiors | Luxury Design & Civil Contracting</title>
   
-  <!-- Import Standard Google Fonts -->
+  <!-- Import Standard Google Fonts used in the design -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,26 +25,30 @@
     a:hover { color: #1C1B18; }
     ::selection { background: #1C1B18; color: #F4F1EA; }
     
-    /* Utility for hover states converted from friend's custom attributes */
+    /* Utility for hover states converted from custom attributes */
     .btn-dark:hover { background: #9A7B4F !important; }
     .btn-outline:hover { border-color: #1C1B18 !important; }
     .nav-btn:hover { background: #1C1B18 !important; color: #F4F1EA !important; }
     .footer-link:hover { color: #F4F1EA !important; }
+    .cta-btn:hover { background: #c2a06a !important; color: #161513 !important; }
     
     /* Service Tile Hover */
     .service-tile img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
     .service-tile:hover img { transform: scale(1.08); }
+    
+    /* Filter Button Hover/Active */
+    .filter-btn { transition: color .3s ease, border-color .3s ease; }
+    .filter-btn.active { color: #1C1B18 !important; border-bottom-color: #9A7B4F !important; }
   </style>
 </head>
 <body>
 
 <div id="top" style="position:relative">
 
-  <!-- STICKY NAV -->
   <nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,4vw,48px);background:transparent;border-bottom:1px solid transparent;transition:background .4s ease,padding .4s ease,border-color .4s ease, backdrop-filter .4s ease;">
     
     <a href="#top" style="display:flex; align-items:center; gap: 15px;">
-      <!-- Using your new transparent logo -->
+      <!-- Logo in root folder -->
       <img src="logo.png" alt="GS Logo" style="height: 40px; width: auto;">
       <div style="display:flex;flex-direction:column;line-height:1">
         <span style="font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;letter-spacing:.04em;color:#1C1B18">Greystone</span>
@@ -60,7 +64,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));min-height:100vh;align-items:stretch">
     <div style="display:flex;flex-direction:column;justify-content:center;padding:clamp(90px,10vw,120px) clamp(24px,5vw,72px) clamp(48px,6vw,72px)">
       <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9A7B4F;font-weight:700;margin-bottom:26px">Interior &amp; Civil Contracting</span>
@@ -85,30 +88,28 @@
     </div>
     
     <div style="position:relative;min-height:60vh;background:#e6e0d4">
-      <!-- High quality hero image -->
+      <!-- High quality hero image placeholder -->
       <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" style="width:100%;height:100%;object-fit:cover;" alt="Luxury Interior">
     </div>
   </section>
 
-  <!-- INTRO -->
-  <section id="about" data-reveal style="max-width:1000px;margin:0 auto;padding:clamp(90px,12vw,150px) clamp(24px,5vw,48px) clamp(60px,7vw,90px);text-align:center">
+  <section data-reveal style="max-width:1000px;margin:0 auto;padding:clamp(90px,12vw,150px) clamp(24px,5vw,48px) clamp(60px,7vw,90px);text-align:center">
     <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9A7B4F;font-weight:700">What we do</span>
     <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,5vw,60px);line-height:1.06;letter-spacing:-.01em;margin:22px 0 0;color:#1C1B18">Expert Interior &amp; Civil Contracting</h2>
     <p style="font-size:clamp(16px,1.5vw,18px);line-height:1.8;color:#57534a;max-width:720px;margin:28px auto 0">Welcome to Greystone Interiors. We bring uncompromised quality and precision to bespoke interior design, specializing in complex structural layouts, premium stone installations, and comprehensive civil finishes.</p>
   </section>
 
-  <!-- WORK (PORTFOLIO GRID) -->
   <section id="work" data-reveal style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px) clamp(90px,12vw,150px)">
     
     <!-- Filters -->
     <div data-filters style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,4vw,44px);margin-bottom:clamp(40px,5vw,64px);border-top:1px solid rgba(28,27,24,.12);border-bottom:1px solid rgba(28,27,24,.12);padding:22px 0">
-      <button data-filter="all" style="background:none;border:none;border-bottom:2px solid #9A7B4F;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#1C1B18;transition:color .3s ease,border-color .3s ease">All Work</button>
-      <button data-filter="stone" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;transition:color .3s ease,border-color .3s ease">Stone &amp; Marble</button>
-      <button data-filter="structural" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;transition:color .3s ease,border-color .3s ease">Structural &amp; Framing</button>
-      <button data-filter="kitchen-bath" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;transition:color .3s ease,border-color .3s ease">Kitchen &amp; Bath</button>
+      <button data-filter="all" class="filter-btn active" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;">All Work</button>
+      <button data-filter="stone" class="filter-btn" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;">Stone &amp; Marble</button>
+      <button data-filter="structural" class="filter-btn" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;">Structural &amp; Framing</button>
+      <button data-filter="kitchen-bath" class="filter-btn" style="background:none;border:none;border-bottom:2px solid transparent;padding:4px 0;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b8578;">Kitchen &amp; Bath</button>
     </div>
 
-    <!-- The 9-Image Grid -->
+    <!-- The 9-Image Grid loaded from Root -->
     <div data-grid style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(14px,1.6vw,22px)">
       
       <div class="service-tile" data-category="stone" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
@@ -122,12 +123,12 @@
       </div>
       
       <div class="service-tile" data-category="stone" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
-        <img src="albert-hyseni-EFYock9d0JA-unsplash.jpg" alt="Vitrified Tile" style="width:100%;height:100%;object-fit:cover;">
+        <img src="albert-hyseni-EFYock9d0JA-unsplash_2.jpg" alt="Vitrified Tile" style="width:100%;height:100%;object-fit:cover;">
         <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Vitrified Tile</span></div>
       </div>
       
       <div class="service-tile" data-category="stone" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
-        <img src="clay-banks-R4Kz9SNajR8-unsplash.jpg" alt="Granite Work" style="width:100%;height:100%;object-fit:cover;">
+        <img src="clay-banks-R4Kz9SNajR8-unsplash_2.jpg" alt="Granite Work" style="width:100%;height:100%;object-fit:cover;">
         <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Granite</span></div>
       </div>
       
@@ -142,24 +143,24 @@
       </div>
       
       <div class="service-tile" data-category="kitchen-bath" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
+        <!-- New Kitchen Image Included Here -->
         <img src="alef-morais-h2t0FJ22xJ4-unsplash.jpg" alt="Kitchen Work" style="width:100%;height:100%;object-fit:cover;">
         <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Kitchen Work</span></div>
       </div>
       
       <div class="service-tile" data-category="structural" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
-        <img src="camille-brodard-mlxRHT1JtuQ-unsplashhgh.jpg" alt="Door and Window Frame" style="width:100%;height:100%;object-fit:cover;">
+        <img src="camille-brodard-mlxRHT1JtuQ-unsplashhgh_2.jpg" alt="Door and Window Frame" style="width:100%;height:100%;object-fit:cover;">
         <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Door / Window Frame</span></div>
       </div>
       
       <div class="service-tile" data-category="structural" style="position:relative;aspect-ratio:4/5;background:#e6e0d4;overflow:hidden">
-        <img src="nur-athirah-hamzah-oTOuuoRQcR0-unsplash.jpg" alt="Staircase Work" style="width:100%;height:100%;object-fit:cover;">
+        <img src="nur-athirah-hamzah-oTOuuoRQcR0-unsplash_2.jpg" alt="Staircase Work" style="width:100%;height:100%;object-fit:cover;">
         <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(to top,rgba(28,27,24,.8),transparent);pointer-events:none"><span style="color:#F4F1EA;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Staircase Work</span></div>
       </div>
 
     </div>
   </section>
 
-  <!-- LEGACY -->
   <section id="legacy" data-reveal style="max-width:1180px;margin:0 auto;padding:0 clamp(24px,5vw,48px) clamp(90px,12vw,150px)">
     <div style="max-width:760px;margin:0 auto clamp(48px,6vw,72px);text-align:center">
       <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9A7B4F;font-weight:700">Track record</span>
@@ -179,7 +180,7 @@
       </div>
       
       <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding:26px 4px;border-bottom:1px solid rgba(28,27,24,.14)">
-        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Mukta Gharonda, Mumbra</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,32px);color:#1C1B18">Barkat Manzil, Tanwar Complex</span>
         <span style="font-size:14px;color:#7a7568;letter-spacing:.02em;text-align:right">Bespoke interior execution for modern 1 &amp; 2 BHK homes</span>
       </div>
       
@@ -211,8 +212,7 @@
     </div>
   </section>
 
-  <!-- STORY / VALUES -->
-  <section style="background:#1C1B18;color:#F4F1EA">
+  <section id="about" style="background:#1C1B18;color:#F4F1EA">
     <div data-reveal style="max-width:1180px;margin:0 auto;padding:clamp(90px,12vw,150px) clamp(24px,5vw,48px)">
       <div style="max-width:860px">
         <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#c2a06a;font-weight:700">Our Story</span>
@@ -250,11 +250,10 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section style="background:#161513;color:#F4F1EA;text-align:center;padding:clamp(90px,12vw,150px) clamp(24px,5vw,48px);border-top:1px solid rgba(244,241,234,.08)">
     <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#c2a06a;font-weight:700">Begin</span>
     <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,6vw,80px);line-height:1.02;letter-spacing:-.01em;margin:20px auto 0;max-width:900px">Let's build something enduring.</h2>
-    <a href="mailto:greystoneinteriorss@gmail.com" class="nav-btn" style="display:inline-block;margin-top:40px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#161513;background:#F4F1EA;padding:17px 34px;border-radius:2px;transition:background .3s ease,color .3s ease">Book a Consultation</a>
+    <a href="mailto:greystoneinteriorss@gmail.com" class="cta-btn" style="display:inline-block;margin-top:40px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#161513;background:#F4F1EA;padding:17px 34px;border-radius:2px;transition:background .3s ease,color .3s ease">Book a Consultation</a>
   </section>
 
   <!-- FOOTER -->
@@ -274,7 +273,6 @@
 
 </div>
 
-<!-- Interactive Javascript extracted from the original file -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // 1. Reveal Animations on Scroll
